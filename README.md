@@ -3,6 +3,6 @@ Bu benim ilk işletim sistemi çalışmam. Bu işletim sistemi klavye girişini 
 
 ## DD ile Usb'ye yazdırmak:
 
-lsdb ile belleğin adını öğrenin(sakın yanlış diski seçmeyin)
+lsblk komutu ile belleğin adını öğrenin(sakın yanlış diski seçmeyin)
 
 sudo dd if=YigitOs.bin of=/dev/(disk adı)
