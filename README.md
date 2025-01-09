@@ -13,5 +13,4 @@ lsblk komutu ile belleğin adını öğrenin(sakın yanlış diski seçmeyin)
   <pre><code>sudo dd if=YigitOs.bin of=/dev/(disk adı)</code></pre>
 </div>
 
-
 ![kapak](img/img.png)
