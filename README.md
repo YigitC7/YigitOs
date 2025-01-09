@@ -6,3 +6,5 @@ Bu benim ilk işletim sistemi çalışmam. Bu işletim sistemi klavye girişini 
 lsblk komutu ile belleğin adını öğrenin(sakın yanlış diski seçmeyin)
 
 sudo dd if=YigitOs.bin of=/dev/(disk adı)
+
+![kapak](img/img.png)
