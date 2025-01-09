@@ -1,6 +1,12 @@
 org 0x7C00
 bits 16
 
+    mov ax, 0x0600
+    mov bh, 0x17
+    mov cx, 0x0000
+    mov dx, 0x184F
+    int 0x10
+
 	mov ax, 0
 	mov ds, ax
 	mov es, ax
@@ -27,6 +33,11 @@ mainloop:
 	jc .helloworld
 
 	mov si, buffer
+	mov di, cmd_merhaba
+	call strcmp
+	jc .merhaba
+
+	mov si, buffer
 	mov di, cmd_help
 	call strcmp
 	jc .help
@@ -37,6 +48,12 @@ mainloop:
 
 .helloworld:
 	mov si, msg_helloworld
+	call print_string
+
+	jmp mainloop
+
+.merhaba:
+	mov si, msg_merhaba
 	call print_string
 
 	jmp mainloop
@@ -53,7 +70,9 @@ badcommand db 'YigitOs: Hatali komut. Komut listesi icin help yaz', 0x0D, 0x0A, 
 prompt db 'Komut>', 0
 cmd_hi db 'selam', 0
 cmd_help db 'help', 0
-msg_help db 'YigitOs: Mevcut Komutlar: selam, help', 0x0D, 0x0A, 0
+msg_help db 'YigitOs: Mevcut Komutlar: selam, help, merhaba', 0x0D, 0x0A, 0
+msg_merhaba db "YigitOs: Merhaba :)", 0x0D, 0x0A, 0
+cmd_merhaba db "merhaba", 0
 buffer times 64 db 0
 
 ; ================
